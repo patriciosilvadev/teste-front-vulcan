@@ -1,0 +1,25 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "name": "Rodrigo Sakamoto",
+      "company": "VulcanNet",
+      "image": "https://avatars0.githubusercontent.com/u/48219669?s=460&v=4",
+      "notification": 3
+    },
+    {
+      "id": 2,
+      "name": "Diego Fernandes",
+      "company": "Rocketseat",
+      "image": "https://avatars0.githubusercontent.com/u/2254731?s=460&v=4",
+      "notification": 0
+    },
+    {
+      "id": 3,
+      "name": "Rodrigo Dias Cruz",
+      "company": "VulcanNet",
+      "image": "https://media-exp1.licdn.com/dms/image/C4E03AQGaG-Gild2qIA/profile-displayphoto-shrink_200_200/0?e=1588204800&v=beta&t=PhH2uA5zBy17C5ZqEONjch2d5cxAqfwfAixEgFK9mRU",
+      "notification": 0
+    }
+  ]
+}
