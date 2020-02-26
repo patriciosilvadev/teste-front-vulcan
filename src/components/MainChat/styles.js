@@ -131,7 +131,7 @@ export const Badge = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 324px;
+    max-width: 324px;
     height: 44px;
     background: #dbf3f8;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -184,7 +184,7 @@ export const Recive = styled.div`
   }
 
   div.message {
-    width: 600px;
+    max-width: 600px;
     margin-top: 28px;
     padding: 20px;
     background: #fff;
@@ -238,7 +238,7 @@ export const MessageSend = styled.div`
 
   div {
     display: flex;
-    width: 600px;
+    max-width: 600px;
     margin-top: 28px;
     padding: 20px;
     background: #d1fadf;
@@ -253,7 +253,7 @@ export const MessageRecive = styled.div`
 
   div {
     display: flex;
-    width: 600px;
+    max-width: 600px;
     margin-top: 28px;
     padding: 20px;
     background: #fff;

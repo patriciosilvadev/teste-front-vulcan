@@ -6,6 +6,10 @@ export const Container = styled.div`
   margin-top: 10px;
   box-shadow: -4px 0px 2px rgba(0, 0, 0, 0.02);
   padding: 20px;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `;
 
 export const Profile = styled.div`
