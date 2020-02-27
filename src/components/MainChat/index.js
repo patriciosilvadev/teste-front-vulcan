@@ -22,6 +22,7 @@ import tel from '../../assets/images/tel.svg';
 import message from '../../assets/images/message.svg';
 import act from '../../assets/images/act.svg';
 import check from '../../assets/images/check.svg';
+import search from '../../assets/images/search2.svg';
 
 export default function MainChat() {
   return (
@@ -56,7 +57,13 @@ export default function MainChat() {
       </Sidebar>
       <Main>
         <Header>
-          <input type="text" />
+          <form>
+            <input />
+            <button type="button">
+              <img src={search} alt="" />
+            </button>
+          </form>
+
           <div>
             <button type="button">TRANSFERIR</button>
             <button className="blue" type="button">

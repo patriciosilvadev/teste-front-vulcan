@@ -11,6 +11,11 @@ export default createGlobalStyle`
 
   html, body, #root {
     height: 100%;
+
+
+    @media(max-width: 1080px) {
+      font-size: 90%;
+    }
   }
 
   body {

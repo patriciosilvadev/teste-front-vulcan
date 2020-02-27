@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import search from '../../assets/images/search2.svg';
-
 export const Container = styled.div`
   display: flex;
   flex: 1;
@@ -12,6 +10,7 @@ export const Container = styled.div`
 
 export const Sidebar = styled.div`
   width: 64px;
+  height: 100%;
   background: #f8fafc;
   box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.04);
   border-radius: 20px 0px 0px 0px;
@@ -77,14 +76,31 @@ export const Header = styled.header`
   background: #fff;
   box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.02);
 
-  input {
+  form {
+    display: flex;
+
+    justify-content: space-between;
     max-width: 280px;
     height: 38px;
     color: #222;
-    padding: 0 40px 0 12px;
-    background: rgba(255, 255, 255, 0.15) url(${search}) no-repeat 180px center;
+    padding: 0 10px 0 12px;
+    background: rgba(255, 255, 255, 0.15);
     border: 1px solid #e0e0e0;
     border-radius: 4px;
+    input {
+      border: 0;
+      max-width: 280px;
+      color: #999;
+    }
+
+    button {
+      border: 0;
+      background: #fff;
+    }
+
+    @media (max-width: 890px) {
+      display: none;
+    }
   }
 
   div {
@@ -104,6 +120,13 @@ export const Header = styled.header`
       line-height: 18px;
       padding: 10px;
 
+      @media (max-width: 1280px) {
+        padding: 5px;
+      }
+
+      @media (max-width: 890px) {
+        padding: 10px;
+      }
       &.blue {
         background: #00a7cf;
         border: none;
@@ -265,9 +288,12 @@ export const MessageRecive = styled.div`
 export const SendMessage = styled.div`
   display: flex;
   flex-direction: row;
+
   input {
     display: flex;
     flex: 1;
+
+    width: 100%;
     align-items: center;
     height: 64px;
     background: #fff;

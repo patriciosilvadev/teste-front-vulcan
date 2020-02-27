@@ -20,12 +20,12 @@ export default function SidebarProfile() {
     <Container>
       <Profile>
         <img
-          src="https://avatars0.githubusercontent.com/u/48219669?s=460&v=4"
+          src="https://media-exp1.licdn.com/dms/image/C4E03AQGaG-Gild2qIA/profile-displayphoto-shrink_200_200/0?e=1588204800&v=beta&t=PhH2uA5zBy17C5ZqEONjch2d5cxAqfwfAixEgFK9mRU"
           alt="avatar"
         />
         <div>
-          <strong>Rodrigo Sakamoto</strong>
-          <p>VulcanNet</p>
+          <strong>Rodrigo Dias Cruz</strong>
+          <p>VulcaNet</p>
         </div>
       </Profile>
       <Actions>
@@ -73,14 +73,14 @@ export default function SidebarProfile() {
             <img src={mail} alt="Whatsapp" />
             <div>
               <p>EMAIL</p>
-              <span>daniel@wezen.com.br</span>
+              <span>rodrigo.cruz@vulcanet.com</span>
             </div>
           </li>
           <li>
             <img src={skype} alt="Whatsapp" />
             <div>
               <p>SKYPE</p>
-              <span>@daniel_furtado</span>
+              <span>@rodrigo.cruz</span>
             </div>
           </li>
         </ul>

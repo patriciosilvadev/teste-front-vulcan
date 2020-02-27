@@ -5,7 +5,6 @@ import search from '../../assets/images/search.svg';
 
 export const Container = styled.aside`
   width: 310px;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -20,6 +19,10 @@ export const Container = styled.aside`
     border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 4px;
     margin: 0 15px;
+  }
+
+  @media (max-width: 760px) {
+    display: none;
   }
 `;
 
