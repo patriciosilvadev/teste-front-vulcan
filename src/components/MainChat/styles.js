@@ -10,7 +10,6 @@ export const Container = styled.div`
 
 export const Sidebar = styled.div`
   width: 64px;
-  height: 100%;
   background: #f8fafc;
   box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.04);
   border-radius: 20px 0px 0px 0px;
@@ -18,6 +17,10 @@ export const Sidebar = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
+
+  &:first-child {
+    padding: 0;
+  }
 
   button {
     width: 64px;
@@ -27,10 +30,6 @@ export const Sidebar = styled.div`
 
     img {
       margin-top: 15px;
-    }
-
-    &:first-child {
-      margin-top: 0;
     }
 
     &.active {
@@ -87,6 +86,7 @@ export const Header = styled.header`
     background: rgba(255, 255, 255, 0.15);
     border: 1px solid #e0e0e0;
     border-radius: 4px;
+
     input {
       border: 0;
       max-width: 280px;
@@ -96,6 +96,10 @@ export const Header = styled.header`
     button {
       border: 0;
       background: #fff;
+
+      @media (max-width: 1080px) {
+        font-size: 50%;
+      }
     }
 
     @media (max-width: 890px) {
@@ -121,7 +125,7 @@ export const Header = styled.header`
       padding: 10px;
 
       @media (max-width: 1280px) {
-        padding: 5px;
+        padding: 0px;
       }
 
       @media (max-width: 890px) {
@@ -143,7 +147,7 @@ export const Chat = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  background: #e5e5e5;
+  background: #f5f8fa;
 `;
 
 export const Badge = styled.div`
@@ -196,6 +200,10 @@ export const Recive = styled.div`
       line-height: 16px;
       font-weight: bold;
       color: #636466;
+
+      @media (max-width: 1080px) {
+        font-size: 95%;
+      }
     }
 
     span {
@@ -203,6 +211,10 @@ export const Recive = styled.div`
       font-size: 15px;
       line-height: 16px;
       color: #636466;
+
+      @media (max-width: 1080px) {
+        font-size: 95%;
+      }
     }
   }
 
@@ -244,6 +256,10 @@ export const Send = styled.div`
       line-height: 16px;
       font-weight: bold;
       color: #636466;
+
+      @media (max-width: 1080px) {
+        font-size: 95%;
+      }
     }
 
     span {
@@ -251,6 +267,10 @@ export const Send = styled.div`
       font-size: 15px;
       line-height: 16px;
       color: #636466;
+
+      @media (max-width: 1080px) {
+        font-size: 95%;
+      }
     }
   }
 `;
@@ -288,6 +308,7 @@ export const MessageRecive = styled.div`
 export const SendMessage = styled.div`
   display: flex;
   flex-direction: row;
+  background: #fff;
 
   input {
     display: flex;
@@ -308,5 +329,8 @@ export const SendMessage = styled.div`
   button {
     background: #fff;
     border: none;
+    margin: 20px 13px;
   }
 `;
+
+export const Message = styled.div``;

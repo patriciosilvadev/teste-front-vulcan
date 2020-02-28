@@ -64,17 +64,20 @@ export const Profile = styled.div`
   width: 280px;
   margin: 15px;
 
-  > img {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-  }
 
-  button {
-    width: 38px;
-    background: none;
-    border: none;
-    margin-left: 40px;
+
+    > img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+
+    button {
+      width: 38px;
+      background: none;
+      border: none;
+      margin-left: 40px;
+    }
   }
 
   div {
@@ -96,17 +99,20 @@ export const Profile = styled.div`
       font-size: 15px;
       line-height: 16px;
     }
-  }
+  
 `;
 
-export const ClientsList = styled.ul`
-  padding: 15px;
-
+export const UsersList = styled.div`
   li {
     display: flex;
     align-items: center;
     width: 310px;
     height: 70px;
+    padding: 15px;
+
+    &.active {
+      background: rgba(0, 0, 0, 0.08);
+    }
 
     img {
       width: 48px;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import {
   Container,
@@ -12,6 +12,7 @@ import {
   Send,
   MessageSend,
   MessageRecive,
+  Message,
 } from './styles';
 
 import calendario from '../../assets/images/calendario.svg';
@@ -24,7 +25,21 @@ import act from '../../assets/images/act.svg';
 import check from '../../assets/images/check.svg';
 import search from '../../assets/images/search2.svg';
 
+import api from '../../services/api';
+
 export default function MainChat() {
+  const [chats, setChats] = useState([]);
+
+  useEffect(() => {
+    async function loadChats() {
+      const response = await api.get('chat');
+
+      setChats(response.data);
+    }
+
+    loadChats();
+  }, []);
+
   return (
     <Container>
       <Sidebar>
@@ -77,71 +92,42 @@ export default function MainChat() {
               Atendimento finalizado em <p> 07/10/2019</p>
             </span>
           </Badge>
-          <Recive>
-            <div className="recive">
-              <img
-                src="https://avatars0.githubusercontent.com/u/48219669?s=460&v=4"
-                alt="avatar"
-              />
-              <p>Rodrigo Sakamoto </p>
-              <span> - 07/10/2019 14h10 </span>
-              <img className="check" src={check} alt="" />
-            </div>
-            <MessageRecive>
-              <div className="message">
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Exercitationem itaque, sint ducimus dignissimos ipsam iure
-                  quis, possimus architecto repellat optio atque porro qui
-                  facilis est cupiditate, voluptatem magnam! Optio, enim.
-                </p>
-              </div>
-            </MessageRecive>
-          </Recive>
-          <Send>
-            <div className="send">
-              <img className="check" src={check} alt="" />
-              <p>Rodrigo Sakamoto </p>
-              <span> - 07/10/2019 14h10 </span>
+          <Message>
+            {chats.map(chat => (
+              <>
+                {chat.sended === false ? (
+                  <Recive key={chat.name}>
+                    <div className="recive">
+                      <img src={chat.image} alt="avatar" />
+                      <p>{chat.name}</p>
+                      <span> - {chat.date} </span>
+                      <img className="check" src={check} alt="" />
+                    </div>
+                    <MessageRecive>
+                      <div className="message">
+                        <p>{chat.body}</p>
+                      </div>
+                    </MessageRecive>
+                  </Recive>
+                ) : (
+                  <Send>
+                    <div className="send">
+                      <img className="check" src={check} alt="" />
+                      <p>{chat.name}</p>
+                      <span> - {chat.date} </span>
 
-              <img
-                src="https://avatars0.githubusercontent.com/u/48219669?s=460&v=4"
-                alt="avatar"
-              />
-            </div>
-            <MessageSend>
-              <div className="message">
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Exercitationem itaque, sint ducimus dignissimos ipsam iure
-                  quis, possimus architecto repellat optio atque porro qui
-                  facilis est cupiditate, voluptatem magnam! Optio, enim.
-                </p>
-              </div>
-            </MessageSend>
-          </Send>
-
-          <Recive>
-            <div className="recive">
-              <img
-                src="https://avatars0.githubusercontent.com/u/48219669?s=460&v=4"
-                alt="avatar"
-              />
-              <p>Rodrigo Sakamoto </p>
-              <span> - 07/10/2019 14h10 </span>
-              <img className="check" src={check} alt="" />
-            </div>
-            <MessageRecive>
-              <div className="message">
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Exercitationem itaque, sint ducimus dignissimos ipsam iure
-                  quis, possimus architecto repellat optio atque porro qui
-                  facilis est cupiditate, voluptatem magnam! Optio, enim.
-                </p>
-              </div>
-            </MessageRecive>
-          </Recive>
+                      <img src={chat.image} alt="avatar" />
+                    </div>
+                    <MessageSend>
+                      <div className="message">
+                        <p>{chat.body}</p>
+                      </div>
+                    </MessageSend>
+                  </Send>
+                )}
+              </>
+            ))}
+          </Message>
         </Chat>
         <SendMessage>
           <input type="text" placeholder="Digite sua mensagem..." />
